@@ -60,7 +60,6 @@ module.exports = (err, req, res, next) => {
     else {
       error = err;
     }
-    console.log(error);
 
     sendErrorProd(error, req, res);
   }
