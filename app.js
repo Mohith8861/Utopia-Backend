@@ -25,7 +25,6 @@ const xss = require('xss-clean');
 const path = require('path');
 
 const cors = require(cors);
-app.use(cors());
 
 app.use(helmet({}));
 // app.use(
@@ -45,6 +44,8 @@ const limiter = rateLimit({
 
 app.use('/', limiter);
 */
+app.use(cors());
+
 app.use(mongoSanitize());
 
 app.use(xss());
