@@ -24,7 +24,7 @@ const xss = require('xss-clean');
 
 const path = require('path');
 
-const cors = require(cors);
+const cors = require('cors');
 
 app.use(helmet({}));
 // app.use(
