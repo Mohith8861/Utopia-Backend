@@ -24,15 +24,6 @@ const xss = require('xss-clean');
 
 const path = require('path');
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-
-  res.setHeader(
-    'Content-Security-Policy',
-    'default-src *; img-src *; style-src *;',
-  );
-  next();
-});
 app.use(helmet({}));
 // app.use(
 //   helmet.contentSecurityPolicy({
@@ -78,7 +69,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use('/', (req, res, next) => {
   req.requestTime = new Date().toISOString();
-  console.log(req.requestTime);
+
   next();
 });
 

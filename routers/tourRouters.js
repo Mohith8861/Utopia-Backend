@@ -15,7 +15,6 @@ router.route('/getstats').get(tourController.getStats);
 router.use(
   '/:tourId/reviews',
   (req, res, next) => {
-    console.log(req.params, req.method);
     next();
   },
   reviewRouter,
